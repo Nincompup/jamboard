@@ -1,0 +1,121 @@
+.container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  top: 60%;
+  left: 15px;
+  transform: translateY(-60%);
+  background-color: #f5f5f5;
+  border: 1px solid #dadce0;
+  width: 48px;
+  border-radius: 24px;
+  padding: 15px 0px;
+  z-index: 1;
+  button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #3d4043;
+    &:is(.active) {
+      background-color: var(--bgColor, #4c4f52);
+      color: #3d4043;
+      &:hover {
+        color: #4c4f52;
+      }
+      svg {
+        fill: white;
+      }
+      i {
+        color: white;
+      }
+    }
+    svg {
+      fill: #3d4043;
+    }
+    i {
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      transform: translateY(-50%);
+      font-size: 10px;
+      color: #3d4043;
+    }
+  }
+}
+
+.toolbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #ebebeb;
+  height: 44px;
+  padding: 0px 25px;
+  z-index: 2;
+  .zoom_in,
+  .zoom_out {
+    font-size: 22px;
+  }
+  .redo,
+  .undo {
+    font-size: 28px;
+    &:disabled {
+      opacity: 0.38;
+      color: #5f6368;
+    }
+  }
+  .redo,
+  .zoom_out {
+    margin-right: 5px;
+  }
+  .undo,
+  .zoom_in {
+    margin-left: 5px;
+  }
+  .background_btn,
+  .clear_btn {
+    font-size: 14px;
+  }
+  .separator {
+    height: 26px;
+    margin: 0px 10px;
+    border-left: 1px solid #dadce0;
+  }
+  .color_btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    button {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        bottom: -5px;
+        left: 0px;
+        border-radius: 1px;
+        background-color: var(--bg);
+      }
+    }
+    i {
+      font-size: 24px;
+    }
+  }
+  button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: #3c4043;
+  }
+}

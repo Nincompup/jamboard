@@ -1,0 +1,112 @@
+.container {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  border: 10px solid #669df6;
+  background-color: transparent;
+  pointer-events: none;
+  z-index: 1;
+  button {
+    position: absolute;
+    background-color: #669df6;
+    border: 8px solid #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    width: var(--size);
+    height: var(--size);
+    --size: 50px;
+    --align: calc(var(--size) / 2 * -1);
+    --scale: 1;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+    &:active {
+      --scale: 1.5;
+    }
+    &:is(:nth-child(1), :nth-child(6), :nth-child(8)) {
+      border-radius: 50%;
+    }
+    &:nth-child(1) {
+      img {
+        position: absolute;
+        top: -35px;
+        left: -35px;
+        width: 100px;
+        height: 100px;
+        user-select: none;
+      }
+    }
+  }
+  .top_start,
+  .bottom_start,
+  .bottom_end {
+    transform: scale(var(--scale));
+  }
+  .top,
+  .bottom {
+    left: 50%;
+    transform: translateX(-50%) scale(var(--scale));
+    cursor: s-resize;
+  }
+  .top {
+    top: var(--align);
+  }
+  .bottom {
+    bottom: var(--align);
+  }
+  .left,
+  .right {
+    top: 50%;
+    transform: translateY(-50%) scale(var(--scale));
+    cursor: e-resize;
+  }
+  .left {
+    left: var(--align);
+  }
+  .right {
+    right: var(--align);
+  }
+  .top_start {
+    top: var(--align);
+    left: var(--align);
+    cursor: crosshair;
+  }
+  .bottom_end,
+  .bottom_start {
+    bottom: var(--align);
+  }
+  .bottom_start {
+    left: var(--align);
+    cursor: ne-resize;
+  }
+  .bottom_end {
+    right: var(--align);
+    cursor: nw-resize;
+  }
+  .top_end {
+    position: absolute;
+    right: -45px;
+    top: -45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    border: none;
+    cursor: pointer;
+    i {
+      font-size: 70px;
+      color: #5f6368;
+    }
+  }
+}
+
+.shape_dropdown {
+  button {
+    font-size: 14px;
+    i {
+      font-size: 18px;
+    }
+  }
+}
